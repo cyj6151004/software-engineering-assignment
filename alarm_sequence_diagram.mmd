@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant User
+    participant AlarmApp
+    participant AlarmManager
+    participant SystemClock
+
+    User->>AlarmApp: 알람 설정 요청 (시간, 반복)
+    AlarmApp->>AlarmManager: 알람 생성 요청
+    AlarmManager->>SystemClock: 알람 등록
+    SystemClock-->>AlarmManager: 알람 등록 성공
+    AlarmManager-->>AlarmApp: 알람 설정 완료
+    AlarmApp-->>User: 알람 설정 완료 메시지
